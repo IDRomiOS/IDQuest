@@ -1,0 +1,112 @@
+[submodule "htdocs"]
+	path = htdocs
+	url = git@github.com:InternetDevels/drupal-core.git
+	branch = 7.x
+[submodule "sites/all/modules/contrib/git_deploy"]
+	path = sites/all/modules/contrib/git_deploy
+	url = http://git.drupal.org/project/git_deploy.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/admin_menu"]
+	path = sites/all/modules/contrib/admin_menu
+	url = http://git.drupal.org/project/admin_menu.git
+	branch = 7.x-3.x
+[submodule "sites/all/modules/contrib/pathauto"]
+	path = sites/all/modules/contrib/pathauto
+	url = http://git.drupal.org/project/pathauto.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/transliteration"]
+	path = sites/all/modules/contrib/transliteration
+	url = http://git.drupal.org/project/transliteration.git
+	branch = 7.x-3.x
+[submodule "sites/all/modules/contrib/globalredirect"]
+	path = sites/all/modules/contrib/globalredirect
+	url = http://git.drupal.org/project/globalredirect.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/libraries"]
+	path = sites/all/modules/contrib/libraries
+	url = http://git.drupal.org/project/libraries.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/ctools"]
+	path = sites/all/modules/contrib/ctools
+	url = http://git.drupal.org/project/ctools.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/token"]
+	path = sites/all/modules/contrib/token
+	url = http://git.drupal.org/project/token.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/ckeditor"]
+	path = sites/all/modules/contrib/ckeditor
+	url = http://git.drupal.org/project/ckeditor.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/imce"]
+	path = sites/all/modules/contrib/imce
+	url = http://git.drupal.org/project/imce.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/jquery_update"]
+	path = sites/all/modules/contrib/jquery_update
+	url = http://git.drupal.org/project/jquery_update.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/devel"]
+	path = sites/all/modules/contrib/devel
+	url = http://git.drupal.org/project/devel.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/entity"]
+	path = sites/all/modules/contrib/entity
+	url = http://git.drupal.org/project/entity.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/restws"]
+	path = sites/all/modules/contrib/restws
+	url = http://git.drupal.org/project/restws.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/views"]
+	path = sites/all/modules/contrib/views
+	url = http://git.drupal.org/project/views.git
+	branch = 7.x-3.x
+[submodule "sites/all/modules/contrib/views_datasource"]
+	path = sites/all/modules/contrib/views_datasource
+	url = http://git.drupal.org/project/views_datasource.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/date"]
+	path = sites/all/modules/contrib/date
+	url = http://git.drupal.org/project/date.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/entityreference"]
+	path = sites/all/modules/contrib/entityreference
+	url = http://git.drupal.org/project/entityreference.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/inline_entity_form"]
+	path = sites/all/modules/contrib/inline_entity_form
+	url = http://git.drupal.org/project/inline_entity_form.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/field_collection"]
+	path = sites/all/modules/contrib/field_collection
+	url = http://git.drupal.org/project/field_collection.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/profile2"]
+	path = sites/all/modules/contrib/profile2
+	url = http://git.drupal.org/project/profile2.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/features"]
+	path = sites/all/modules/contrib/features
+	url = http://git.drupal.org/project/features.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/interval"]
+	path = sites/all/modules/contrib/interval
+	url = http://git.drupal.org/project/interval.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/field_group"]
+	path = sites/all/modules/contrib/field_group
+	url = http://git.drupal.org/project/field_group.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/references"]
+	path = sites/all/modules/contrib/references
+	url = http://git.drupal.org/project/references.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/rules"]
+	path = sites/all/modules/contrib/rules
+	url = http://git.drupal.org/project/rules.git
+	branch = 7.x-2.x
+[submodule "sites/all/modules/contrib/node_access_rules"]
+	path = sites/all/modules/contrib/node_access_rules
+	url = http://git.drupal.org/project/node_access_rules.git
+	branch = 7.x-1.x
