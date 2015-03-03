@@ -110,3 +110,11 @@
 	path = sites/all/modules/contrib/node_access_rules
 	url = http://git.drupal.org/project/node_access_rules.git
 	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/rules_list_conditions"]
+	path = sites/all/modules/contrib/rules_list_conditions
+	url = http://git.drupal.org/project/rules_list_conditions.git
+	branch = 7.x-1.x
+[submodule "sites/all/modules/contrib/field_permissions"]
+	path = sites/all/modules/contrib/field_permissions
+	url = http://git.drupal.org/project/field_permissions.git
+	branch = 7.x-1.x
