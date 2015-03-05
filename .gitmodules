@@ -106,10 +106,6 @@
 	path = sites/all/modules/contrib/rules
 	url = http://git.drupal.org/project/rules.git
 	branch = 7.x-2.x
-[submodule "sites/all/modules/contrib/node_access_rules"]
-	path = sites/all/modules/contrib/node_access_rules
-	url = http://git.drupal.org/project/node_access_rules.git
-	branch = 7.x-1.x
 [submodule "sites/all/modules/contrib/rules_list_conditions"]
 	path = sites/all/modules/contrib/rules_list_conditions
 	url = http://git.drupal.org/project/rules_list_conditions.git

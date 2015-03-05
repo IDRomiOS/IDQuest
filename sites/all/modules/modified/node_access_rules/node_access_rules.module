@@ -1,0 +1,20 @@
+<?php
+
+/**
+ * Implements hook_node_access().
+ */
+function node_access_rules_node_access($node, $op, $account) {
+  $type = is_string($node) ? $node : $node->type;
+
+  if (in_array($type, node_permissions_get_configured_types())) {
+
+    $node_access_rules = &drupal_static('node_access_rules');
+
+    rules_event_invocation_enabled(TRUE);
+    rules_invoke_event('node_access_rules_' . $op , $node);
+
+    if ($node_access_rules) {
+      return $node_access_rules;
+    }
+  }
+}

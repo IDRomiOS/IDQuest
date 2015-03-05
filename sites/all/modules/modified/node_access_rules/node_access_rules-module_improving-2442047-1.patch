@@ -1,0 +1,154 @@
+diff --git a/node_access_rules.module b/node_access_rules.module
+index 5494a7b..22f693e 100644
+--- a/node_access_rules.module
++++ b/node_access_rules.module
+@@ -1,39 +1,20 @@
+ <?php
+ 
+ /**
+- * 
+- * Implementation of hook_node_access().
++ * Implements hook_node_access().
+  */
+ function node_access_rules_node_access($node, $op, $account) {
+   $type = is_string($node) ? $node : $node->type;
+ 
+   if (in_array($type, node_permissions_get_configured_types())) {
+-  	
+-    if ($op == 'create') {
+-	  global $node_access_rules;
+-	  rules_invoke_event('node_access_rules_create', $node);
+-      return $node_access_rules;
+-    }
+-  	
+-  	if ($op == 'view') {
+-	  global $node_access_rules;
+-	  rules_invoke_event('node_access_rules_view', $node);
+-      return $node_access_rules;
+-    }
+ 
+-    if ($op == 'update') {
+-	  global $node_access_rules;
+-	  rules_invoke_event('node_access_rules_edit', $node);
+-      return $node_access_rules;
+-    }
++    $node_access_rules = &drupal_static('node_access_rules');
++
++    rules_event_invocation_enabled(TRUE);
++    rules_invoke_event('node_access_rules_' . $op , $node);
+ 
+-    if ($op == 'delete') {
+-	  global $node_access_rules;
+-	  rules_invoke_event('node_access_rules_delete', $node);
++    if ($node_access_rules) {
+       return $node_access_rules;
+     }
+   }
+-
+ }
+-
+-
+diff --git a/node_access_rules.rules.inc b/node_access_rules.rules.inc
+index b463d3d..c781d0f 100644
+--- a/node_access_rules.rules.inc
++++ b/node_access_rules.rules.inc
+@@ -1,57 +1,27 @@
+ <?php
+ 
+ /**
+-* Implementation of hook_rules_event_info().
+-*/
++ * Implements hook_rules_event_info().
++ */
+ function node_access_rules_rules_event_info() {
+   $events = array();
+- 
+-  $events['node_access_rules_create'] = array(
+-    'label' => t('Request for create rights'),
+-    'group' => t('Node Access'),
+-    'variables' => array(
+-      'node' => array(
+-        'type' => 'node',
+-        'label' => t('Node to create')
+-      ),
+-    )
+-  );
+-  
+-  $events['node_access_rules_view'] = array(
+-    'label' => t('Request for view rights'),
+-    'group' => t('Node Access'),
+-    'variables' => array(
+-      'node' => array(
+-        'type' => 'node',
+-        'label' => t('Node to view')
+-      ),
+-    )
+-  );
+-
+-  $events['node_access_rules_edit'] = array(
+-    'label' => t('Request for edit rights'),
+-    'group' => t('Node Access'),
+-    'variables' => array(
+-      'node' => array(
+-        'type' => 'node',
+-        'label' => t('Node to edit')
+-      ),
+-    )
+-  );
++  $operations = array('create', 'view', 'update', 'delete');
+ 
+-  $events['node_access_rules_delete'] = array(
+-    'label' => t('Request for delete right'),
+-    'group' => t('Node Access'),
+-    'variables' => array(
+-      'node' => array(
+-        'type' => 'node',
+-        'label' => t('Node to delete')
+-      ),
+-    )
+-  );
++  foreach ($operations as $op) {
++    $events['node_access_rules_' . $op] = array(
++      'label' => t("Request for {$op} rights"),
++      'group' => t('Node Access'),
++      'variables' => array(
++        'node' => array(
++          'type' => 'node',
++          'label' => t("Node to {$op}")
++        ),
++      )
++    );
++  }
+ 
+   return $events;
+-	
++
+ }
+ 
+ /**
+@@ -77,16 +47,22 @@ function node_access_rules_rules_action_info() {
+       'execute' => 'node_access_rules_action_deny',
+     ),
+   );
+-    
++
+   return $actions;
+ }
+ 
++/**
++ * Action for allow access.
++ */
+ function node_access_rules_action_allow() {
+-  global $node_access_rules;
++  $node_access_rules = &drupal_static('node_access_rules');
+   $node_access_rules = NODE_ACCESS_ALLOW;
+ }
+ 
++/**
++ * Action for deny access.
++ */
+ function node_access_rules_action_deny() {
+-  global $node_access_rules;
++  $node_access_rules = &drupal_static('node_access_rules');
+   $node_access_rules = NODE_ACCESS_DENY;
+ }
