@@ -1,0 +1,14 @@
+name = IDQuest
+description = Integrated with AngularJS.
+core = 7.x
+engine = phptemplate
+
+stylesheets[all][] = css/reset.css
+stylesheets[all][] = css/style.css
+
+scripts[] = js/main.js
+
+; default regions
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer

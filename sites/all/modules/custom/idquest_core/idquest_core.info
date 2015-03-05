@@ -1,0 +1,4 @@
+name = IDQuest Core
+description = Module for custom manipulations on site.
+core = 7.x
+package = IDQuest
